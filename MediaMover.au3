@@ -12,11 +12,14 @@ Script Function:
 Main()
 Func Main()
    ;tell it where to find the media
-   Global $dropbox = "E:\Documents\Dropbox\MediaTemp\"
-   Global $media = "I:\TV\"
+   Global $src = "E:\Documents\Dropbox\MediaTemp\"
+   Global $dst = "I:\TV\"
    
    ;do all the file goodness
-   Populate($dropbox)
+   ;For TV Shows
+   Populate($src)
+   ;For other files
+   ;This needs to be done...
 EndFunc
 
 Func Populate($src)
@@ -68,10 +71,10 @@ Func seasonCalc($s)
 EndFunc
 
 Func move($show, $season, $name)
-   Local $fShow = $show & "\"
-   Local $fSeason = $season & "\"
-   Local $source = $dropbox & $name
-   Local $dest = $media & $fShow & $fSeason & $name
+	  Local $fShow = $show & "\"
+	  Local $fSeason = $season & "\"
+	  Local $source = $dropbox & $name
+	  Local $dest = $media & $fShow & $fSeason & $name
 
-   FileMove($source, $dest)
+	  FileMove($source, $dest)
 EndFunc
