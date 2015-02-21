@@ -25,6 +25,6 @@ Func Main()
 			FileOpen($txt, 1)
 			FileWrite($txt, $element & @CRLF)
 		 EndIf
-	 Next
- EndIf
+	  Next
+	EndIf
 EndFunc

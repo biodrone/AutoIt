@@ -6,6 +6,7 @@
 	Copy files from a target machine to a removable drive
 	With the presence of a progress bar [optional]
 #ce ----------------------------------------------------------------------------
+
 #include <Misc.au3>
 #include <File.au3>
 #include <Array.au3>
@@ -16,41 +17,45 @@ Func Main()
    Global $k = 1
    Global $i = 0
    Global $j = 1
-   Global $Drive_Letter = ""
+   Global $drive_letter = ""
    Global $l = 1
+   Global $drive_arr
    Find_Drive()
    ; copy dirs containing only files
    ;Copy(@FavoritesDir)
    ;Copy("C:\Documents and Settings\James\My Documents\Dropbox\Eclipse")
-   Copy(@MyDocumentsDir)
+   Copy("D:\Code")
 EndFunc
 
 Func Find_Drive()
    ; find all drives with REMOVABLE as their type
-   Global $drive_arr = DriveGetDrive("REMOVABLE")
+   $drive_arr = DriveGetDrive("REMOVABLE")
+   _ArrayDisplay($drive_arr)
    ; check for the drive with the right label and set it's letter to $drive_letter
    For $i = 0 to $drive_arr[0]
 	  If DriveGetLabel($drive_arr[$i]) = "USBDESTRUCT" Then
 		 Global $drive_letter = $drive_arr[$i]
+		 ;debug goodness
+		 MsgBox(0, "Drive Letter", $drive_letter)
 	  EndIf
-   Next
+   ;Next
 EndFunc
 
-Func Progress($srcsz, $trgsz, $newtrgsz)
-   ConsoleWrite('Currently, srcsz = ' & $srcsz & ' and newtrgsz = ' & $newtrgsz & @CR)
-   If $newtrgsz = 0 Then $newtrgsz = 1
-   If @error == 0 Then
-	  If $k < $FileList[0] Then
-			ConsoleWrite('Division equation is ' & $k/$FileList[0] & @CR)
-			ConsoleWrite('Percentage equation is ' & Ceiling($k/$FileList[0]*100) & @CR)
-			ProgressSet($k/$FileList[0]*100, "File " & $k & ": " & Ceiling($k/$FileList[0]*100) & " %" & @CR)
-	  Else
-		 ProgressSet(100, "100 %", "Finished")
-	  EndIf
-   Else
-	  MsgBox(0, "Error!", "Sorry, an error has occured!", 2)
-   EndIf
-EndFunc
+;Func Progress($srcsz, $trgsz, $newtrgsz)
+;   ConsoleWrite('Currently, srcsz = ' & $srcsz & ' and newtrgsz = ' & $newtrgsz & @CR)
+;   If $newtrgsz = 0 Then $newtrgsz = 1
+;   If @error == 0 Then
+;	  If $k < $FileList[0] Then
+;			ConsoleWrite('Division equation is ' & $k/$FileList[0] & @CR)
+;			ConsoleWrite('Percentage equation is ' & Ceiling($k/$FileList[0]*100) & @CR)
+;			ProgressSet($k/$FileList[0]*100, "File " & $k & ": " & Ceiling($k/$FileList[0]*100) & " %" & @CR)
+;	  Else
+;		 ProgressSet(100, "100 %", "Finished")
+;	  EndIf
+;   Else
+;	  MsgBox(0, "Error!", "Sorry, an error has occured!", 2)
+;   EndIf
+;EndFunc
 
 Func Copy($src)
    ; check for bad string formatting
@@ -84,7 +89,7 @@ Func Copy($src)
 		 DirCopy($src, $trg, 1)
 	  EndIf
    Next
-   $FileList = _FlieListToArray($src, 1)
+   $FileList = _FileListToArray($src, 1)
    _ArrayDisplay($FileList)
    If @error = 4 Then
 	  MsgBox(0,'Error!','Sorry, an error happened. No files in the source directory!', 2)
@@ -95,7 +100,8 @@ Func Copy($src)
    EndIf
    ; copy files
    For $j = 1 to $FileList[0]
-	  Progress($srcsz, $trgsz, $newtrgsz) 
+	  ;enable progressbar here
+	  ;Progress($srcsz, $trgsz, $newtrgsz)
 	  FileCopy($src & $FileList[$j], $trg)
 	  $newtrgsz = GetFolderSize($trg, "mb")
 	  $k = $k + 1
