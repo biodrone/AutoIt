@@ -1,6 +1,6 @@
 #cs ----------------------------------------------------------------------------
  AutoIt Version: 3.3.8.1
- Author:         squ1r3ll
+ Author:         biodrone
  Script Function:
 	Merge a bunch of files [from an array] into one file
 #ce ----------------------------------------------------------------------------

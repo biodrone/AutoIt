@@ -1,5 +1,5 @@
 #cs
-Author: squ1r3ll
+Author: biodrone
 Script Function: Automated Escape Drive; plug in a pen drive, launch the exe, get data.
 			     ### Remove all data within ;DEBUG tags when taking the script live!###
 #ce

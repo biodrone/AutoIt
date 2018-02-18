@@ -1,5 +1,5 @@
 #cs ----------------------------------------------------------------------------
-Author: squ1r3ll
+Author: biodrone
 Script Function:
 	Takes media put into a folder and sorts it into another place [media drive]
 	so that it can be scanned properly by media streamers

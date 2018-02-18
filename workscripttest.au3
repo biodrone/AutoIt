@@ -1,5 +1,5 @@
 #cs
-   Author: squ1r3ll
+   Author: biodrone
    Script Function: Test array searching for work script
 #ce
 

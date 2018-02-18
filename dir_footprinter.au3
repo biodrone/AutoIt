@@ -1,7 +1,7 @@
 #cs ----------------------------------------------------------------------------
 
  AutoIt Version: 3.3.8.1
- Author: squ1r3ll
+ Author: biodrone
  Function: To make a list of files and/or folders in a directory and put them in
 		   a text file
 #ce ----------------------------------------------------------------------------

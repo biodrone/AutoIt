@@ -1,6 +1,6 @@
 #cs ----------------------------------------------------------------------------
  AutoIt Version: 3.3.8.1
- Author:         squ1r3ll
+ Author:         biodrone
  Script Version: 0.2.0
  Script Function:
 	Copy files from a target machine to a removable drive

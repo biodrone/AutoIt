@@ -1,6 +1,6 @@
 #cs ----------------------------------------------------------------------------
  AutoIt Version: 3.3.8.1
- Author:         squ1r3ll
+ Author:         biodrone
  Script Version: 0.0.1
  Script Function:
 	Made to copy the directory that the script is in to another place

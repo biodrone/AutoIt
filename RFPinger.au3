@@ -1,5 +1,5 @@
 #cs
-Author: JJ
+Author: biodrone
 Script Function: Ping both ends of a forecourt RF link easily
 #ce
 

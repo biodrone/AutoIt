@@ -1,6 +1,6 @@
 #cs ----------------------------------------------------------------------------
  AutoIt Version: 3.3.8.1
- Author:         squ1r3ll
+ Author:         biodrone
  Script Function:
 	Opens and closes the CD tray infinitely
 #ce ----------------------------------------------------------------------------

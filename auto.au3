@@ -1,6 +1,6 @@
 #cs ----------------------------------------------------------------------------
  AutoIt Version: 3.3.8.1
- Author:         squ1r3ll
+ Author:         biodrone
  Script Function:
 	To copy script files onto the C drive of a target machine and launch them
 #ce ----------------------------------------------------------------------------

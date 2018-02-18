@@ -1,5 +1,5 @@
 ;Purpose: Script to backup syncs on the server
-;Author: JJ
+;Author: biodrone
 ;Version: 0.5
 
 #include <Date.au3>
